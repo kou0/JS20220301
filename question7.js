@@ -6,6 +6,7 @@ const main = () => {
         let ccount = 0
         let pcount = 0
         let gcount = 0
+        let win = 0
         for (hand of opHands) {
             if (hand === "C") {
                 ccount++
@@ -16,13 +17,14 @@ const main = () => {
             }
         }
         for (i = pcount; i > 0; i--) {
-            for (j = 0; j < gcount; j++)
+            for (j = 0; j <= gcount; j++) {
                 if ((i * 2) + (j * 5) === M) {
-                    ccount = ccount + i + j
+                    win = ccount + i + j
                     break;
                 }
+            }
+            console.log(win)
         }
-        console.log(ccount)
     }
     /**
      * 標準入出力のための処理

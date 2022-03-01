@@ -1,5 +1,5 @@
 const main = () => {
-        console.log(lines[0] * lines[1])
+        console.log(Number(lines[0]) * Number(lines[1]))
     }
     /**
      * 標準入出力のための処理

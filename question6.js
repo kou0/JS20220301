@@ -13,11 +13,13 @@ const main = () => {
             let isDup = false
             const prechair = chair.concat()
             for (j = b; j < a + b; j++) {
-                if (prechair[j - 1]) {
+                //値が席数を超えないようにしなくちゃいけないんだった
+                const k = j % N
+                if (prechair[k - 1]) {
                     isDup = true
                     break;
                 }
-                prechair[j - 1] = true
+                prechair[k - 1] = true
             }
             if (!isDup) {
                 chair = prechair.concat();

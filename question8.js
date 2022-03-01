@@ -2,23 +2,24 @@ const main = () => {
     const nmLine = lines[0].split(' ')
     const N = Number(nmLine[0])
     const M = Number(nmLine[1])
-    var field = Array(M);
+    let field = Array(M);
     let count = 0
     for (i = 0; i < M; i++) {
         field[i] = lines[i + 1].split(' ')
     }
     for (i = 0; i < M; i++) {
         for (j = 0; j < N; j++) {
-            if (field[i][j] === '1') {
+            if (!field[i][j].flag && field[i][j] === '1') {
                 walk(field, i, j)
                 count++
+                console.log(field)
             }
         }
     }
     console.log(count)
 }
 const walk = (field, i, j) => {
-        field[i][j] = 0
+        field[i][j].flag = true
         if (field[i - 1] && field[i - 1][j] === 1) {
             walk(field, i - 1, j)
         }

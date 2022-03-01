@@ -2,7 +2,7 @@ const main = () => {
     const nmLine = lines[0].split(' ')
     const N = Number(nmLine[0])
     const M = Number(nmLine[1])
-    const field = Array(M);
+    var field = Array(M);
     let count = 0
     for (i = 0; i < M; i++) {
         field[i] = lines[i + 1].split(' ')

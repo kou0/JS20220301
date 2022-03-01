@@ -1,6 +1,6 @@
 const main = () => {
         const line = lines[0].split(' ')
-        console.log(line[0] + line[1])
+        console.log(Number(line[0]) + Number(line[1]))
     }
     /**
      * 標準入出力のための処理

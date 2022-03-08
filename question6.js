@@ -4,17 +4,17 @@ const main = () => {
         const N = Number(nmLine[0])
         const M = Number(nmLine[1])
         let chair = Array(N).fill(false)
-        for (i = 0; i < M; i++) {
+        for (i = 1; i <= M; i++) {
             //一行目以外取得
-            const groupLine = lines[i + 1].split(' ')
-            const a = Number(groupLine[0])
-            const b = Number(groupLine[1])
+            const groupLine = lines[i].split(' ')
+            const peopleNum = Number(groupLine[0])
+            const chairNum = Number(groupLine[1])
                 //江戸っ子フラグ
             let isDup = false
             const prechair = chair.concat()
-            for (j = b; j < a + b; j++) {
+            for (j = chairNum; j < chairNum + peopleNum; j++) {
                 //値が席数を超えないようにしなくちゃいけないんだった
-                const k = j - 1 % N
+                const k = (j - 1) % N
                 if (prechair[k]) {
                     isDup = true
                     break;
